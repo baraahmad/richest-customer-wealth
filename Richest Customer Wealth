@@ -1,0 +1,18 @@
+var maximumWealth = function(accounts) {
+    let sum=0;
+    let currentSum=0;
+    let current=[];
+    for(let i=0; i<accounts.length; i++){
+        current.push(...accounts[i]);
+        for(let j=0; j<current.length; j++){
+            sum +=current[j];
+        }
+        if(currentSum <= sum){
+            currentSum = sum;
+            
+        }
+            sum=0;
+            current=[];
+    }
+    return currentSum;
+};
